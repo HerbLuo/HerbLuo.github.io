@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="javascript,duu," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="实习中实现的一种配置式的后台管理系统的开发方案，在此做个回忆，梳理和记录，有机会再整理，重写并优化。">
+<meta name="keywords" content="javascript,duu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="duu">
+<meta property="og:url" content="http://yoursite.com/2018/03/21/duu/index.html">
+<meta property="og:site_name" content="黄粱地">
+<meta property="og:description" content="实习中实现的一种配置式的后台管理系统的开发方案，在此做个回忆，梳理和记录，有机会再整理，重写并优化。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-22T10:31:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="duu">
+<meta name="twitter:description" content="实习中实现的一种配置式的后台管理系统的开发方案，在此做个回忆，梳理和记录，有机会再整理，重写并优化。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/21/duu/"/>
+
+
+
+
+
+  <title>duu | 黄粱地</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">黄粱地</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/index.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/index.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-demos">
+          <a href="/demos/index.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-folder-open"></i> <br />
+            
+            Demos
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/21/duu/index.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="一颗小白骨儿">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="黄粱地">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">duu</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-21T23:06:45+08:00">
+                2018-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/21/duu/index.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/03/21/duu/index.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>实习中实现的一种配置式的后台管理系统的开发方案，<br>在此做个回忆，梳理和记录，<br>有机会再整理，重写并优化。</p>
+<a id="more"></a>
+<h3 id="一：概述"><a href="#一：概述" class="headerlink" title="一：概述"></a>一：概述</h3><p>这种配置式的开发方案仅可用于前端，且通用性暂时不大，<br>实现部分十分基础，并没有什么高深的东西，<br>本文仅节选部分配置属性，从<code>[数据，配置，UI层，配置处理层]</code>进行说明。</p>
+<h3 id="二：数据（以人员信息为例，其中所属部门为下拉框）"><a href="#二：数据（以人员信息为例，其中所属部门为下拉框）" class="headerlink" title="二：数据（以人员信息为例，其中所属部门为下拉框）"></a>二：数据（以人员信息为例，其中所属部门为下拉框）</h3><h4 id="1-服务端返回与接收的数据格式"><a href="#1-服务端返回与接收的数据格式" class="headerlink" title="1: 服务端返回与接收的数据格式"></a>1: 服务端返回与接收的数据格式</h4><p>人员信息（Data）<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"小明"</span>,</span><br><span class="line">  <span class="attr">"department"</span>: <span class="number">2</span> // 所属部门编号</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>部门信息（也就是下拉框中的数据，DetailData）<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[&#123;</span><br><span class="line">  <span class="attr">"id"</span>: <span class="number">2</span>,</span><br><span class="line">  <span class="attr">"departmentName"</span>: <span class="string">"技术部"</span></span><br><span class="line">&#125;]</span><br></pre></td></tr></table></figure></p>
+<h4 id="2-UI层接受的数据格式为"><a href="#2-UI层接受的数据格式为" class="headerlink" title="2: UI层接受的数据格式为"></a>2: UI层接受的数据格式为</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"小明"</span>,</span><br><span class="line">  <span class="attr">"department"</span>: <span class="number">2</span>, </span><br><span class="line">  "_department": &#123; // 并非直接显示在视图上的数据</span><br><span class="line">    "list": [&#123;</span><br><span class="line">      "_value": 2, // 返回服务器的</span><br><span class="line">      "_label": "技术部" // 展示给用户的</span><br><span class="line">    &#125;],</span><br><span class="line">    "_label": "", // 当前的</span><br><span class="line">    "_value": "" // 当前的</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="三：配置"><a href="#三：配置" class="headerlink" title="三：配置"></a>三：配置</h3><h4 id="1-所有的数据处理（例如，由服务端数据转换为UI接受的数据）都在配置中完成"><a href="#1-所有的数据处理（例如，由服务端数据转换为UI接受的数据）都在配置中完成" class="headerlink" title="1. 所有的数据处理（例如，由服务端数据转换为UI接受的数据）都在配置中完成"></a>1. 所有的数据处理（例如，由<a href="#1-服务端返回与接收的数据格式">服务端数据</a>转换为<a href="#2-UI层接受的数据格式为">UI接受的数据</a>）都在配置中完成</h4><h4 id="2-配置大致如下"><a href="#2-配置大致如下" class="headerlink" title="2. 配置大致如下"></a>2. 配置大致如下</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mapping = &#123; <span class="comment">// 对服务端返回数据的一种解释</span></span><br><span class="line">  name: &#123;</span><br><span class="line">    label: <span class="string">'姓名'</span>,</span><br><span class="line">    tip: <span class="string">'不超过5个字'</span>,</span><br><span class="line">    nullable: <span class="literal">false</span>,</span><br><span class="line">    validate: [</span><br><span class="line">      &#123;<span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">message</span>: <span class="string">'姓名不能为空'</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">max</span>: <span class="number">5</span>, <span class="attr">message</span>: <span class="string">'姓名不超过5个字'</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">pattern</span>: pattern.zhCN, <span class="attr">message</span>: <span class="string">'只允许输入中文'</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  department: &#123;</span><br><span class="line">    label: <span class="string">'部门'</span>,</span><br><span class="line">    list: &#123; <span class="comment">// list会最终转换为 initData, onDataLoaded, fetchDetail 这种东西</span></span><br><span class="line">      key: &#123;</span><br><span class="line">        dataLabel: <span class="string">''</span>,</span><br><span class="line">        dataValue: <span class="string">'department'</span>,</span><br><span class="line">        detailLabel: <span class="string">'departmentName'</span>,</span><br><span class="line">        detailValue: <span class="string">'id'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      fetch: api.getDepartment,</span><br><span class="line">      <span class="keyword">default</span>: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// initData (data, payload) &#123;&#125;, // 各种处理数据的回调，他们的执行时期不同</span></span><br><span class="line">    <span class="comment">// onDataLoaded (data, paylaod) &#123;&#125;,</span></span><br><span class="line">    <span class="comment">// fetchDetail (data, payload) &#123;&#125;,</span></span><br><span class="line">    <span class="comment">// onDetailLoaded (data, list, payload) &#123;&#125;,</span></span><br><span class="line">    <span class="comment">// beforeDataIsPost (data, payload) &#123;&#125;,</span></span><br><span class="line">    <span class="comment">// onSelected (value, data, payload) &#123;&#125;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  create: &#123;&#125;, <span class="comment">// 创建界面的相关配置</span></span><br><span class="line">  modify: &#123;&#125;, <span class="comment">// 修改界面的相关配置</span></span><br><span class="line">  </span><br><span class="line">  mapping,</span><br><span class="line">  get: <span class="function"><span class="params">requestBody</span> =&gt;</span> fetch(),</span><br><span class="line">  patch: <span class="function"><span class="params">data</span> =&gt;</span> fetch()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">registerConfig(<span class="string">'pageName'</span>, config) <span class="comment">// 注册该配置</span></span><br></pre></td></tr></table></figure>
+<h3 id="四：UI层"><a href="#四：UI层" class="headerlink" title="四：UI层"></a>四：UI层</h3><h4 id="1-UI层使用模板语言处理并展示-label-tip-nullable-等基本配置"><a href="#1-UI层使用模板语言处理并展示-label-tip-nullable-等基本配置" class="headerlink" title="1. UI层使用模板语言处理并展示[label, tip, nullable]等基本配置"></a>1. UI层使用模板语言处理并展示<code>[label, tip, nullable]</code>等基本配置</h4><h4 id="2-UI层不对数据处理，仅依次调用-initData-onDataLoaded-fetchDetail-onDetailLoaded-等配置中的方法来完成数据处理"><a href="#2-UI层不对数据处理，仅依次调用-initData-onDataLoaded-fetchDetail-onDetailLoaded-等配置中的方法来完成数据处理" class="headerlink" title="2. UI层不对数据处理，仅依次调用 [initData, onDataLoaded, fetchDetail, onDetailLoaded]等配置中的方法来完成数据处理"></a>2. UI层不对数据处理，仅依次调用 <code>[initData, onDataLoaded, fetchDetail, onDetailLoaded]</code>等配置中的方法来完成数据处理</h4><ol>
+<li>优点：使配置拥有完整的操作数据的能力，这一套方案，可以处理<code>[下拉框，时间范围选择框，远程搜索框，树组件下拉框]</code>等</li>
+<li>缺点：可能导致配置冗长</li>
+</ol>
+<h3 id="五：配置文件的处理与格式化"><a href="#五：配置文件的处理与格式化" class="headerlink" title="五：配置文件的处理与格式化"></a>五：配置文件的处理与格式化</h3><p>为了避免配置文件的冗长，<br>如<a href="#2-配置大致如下">三.2</a> 中的 <code>mapping.department</code>，<br>提供<code>list</code>这种高糖代替<code>各种处理数据的回调</code>，<code>list配置</code>最终会被转换成<code>默认的处理数据的回调</code>，<br>这种处理会在注册配置时调用。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/index.html" rel="tag"># javascript</a>
+          
+            <a href="/tags/duu/index.html" rel="tag"># duu</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/21/a-demo-for-babel-plugin/index.html" rel="next" title="编写babel-plugin 模拟kotlin中的also等扩展方法">
+                <i class="fa fa-chevron-left"></i> 编写babel-plugin 模拟kotlin中的also等扩展方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="一颗小白骨儿" />
+          <p class="site-author-name" itemprop="name">一颗小白骨儿</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/HerbLuo" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:i@closx.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一：概述"><span class="nav-number">1.</span> <span class="nav-text">一：概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二：数据（以人员信息为例，其中所属部门为下拉框）"><span class="nav-number">2.</span> <span class="nav-text">二：数据（以人员信息为例，其中所属部门为下拉框）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-服务端返回与接收的数据格式"><span class="nav-number">2.1.</span> <span class="nav-text">1: 服务端返回与接收的数据格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-UI层接受的数据格式为"><span class="nav-number">2.2.</span> <span class="nav-text">2: UI层接受的数据格式为</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三：配置"><span class="nav-number">3.</span> <span class="nav-text">三：配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-所有的数据处理（例如，由服务端数据转换为UI接受的数据）都在配置中完成"><span class="nav-number">3.1.</span> <span class="nav-text">1. 所有的数据处理（例如，由服务端数据转换为UI接受的数据）都在配置中完成</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-配置大致如下"><span class="nav-number">3.2.</span> <span class="nav-text">2. 配置大致如下</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四：UI层"><span class="nav-number">4.</span> <span class="nav-text">四：UI层</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-UI层使用模板语言处理并展示-label-tip-nullable-等基本配置"><span class="nav-number">4.1.</span> <span class="nav-text">1. UI层使用模板语言处理并展示[label, tip, nullable]等基本配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-UI层不对数据处理，仅依次调用-initData-onDataLoaded-fetchDetail-onDetailLoaded-等配置中的方法来完成数据处理"><span class="nav-number">4.2.</span> <span class="nav-text">2. UI层不对数据处理，仅依次调用 [initData, onDataLoaded, fetchDetail, onDetailLoaded]等配置中的方法来完成数据处理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五：配置文件的处理与格式化"><span class="nav-number">5.</span> <span class="nav-text">五：配置文件的处理与格式化</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">一颗小白骨儿</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Gemini
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://blog-cloudself-cn.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/03/21/duu/index.html';
+          this.page.identifier = '2018/03/21/duu/index.html';
+          this.page.title = 'duu';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://blog-cloudself-cn.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
